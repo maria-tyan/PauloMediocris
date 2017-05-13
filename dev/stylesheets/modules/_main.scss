@@ -1,0 +1,73 @@
+.main{
+	width: 100vw;
+	height: 100vh;
+	display: block;
+	position: relative;
+}
+
+.main-screen{
+	padding-top: 20vh;
+	padding-bottom: 20vh;
+}
+
+@keyframes move {
+	from, 
+	to {
+		top: 0;
+		left: 0;
+	}
+	25%, 
+	75% {top: 10%;}
+	50% {top: 5%;}
+}
+
+.animated{
+	animation-name: move;
+	animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+h1{
+	span{
+		color: $orange2;
+		display: block;
+		text-transform: uppercase;
+		font-size: 120%;
+	}
+}
+
+
+
+
+.image-wrap{
+	position: relative;
+	height: 80vh;
+	padding-bottom: 20vh;
+	img{
+		max-width: 100%;
+		
+	}
+	&__falls-girl{
+		transform: translateY(-100%);
+		position: absolute;
+		bottom: 0;
+		z-index: 3;
+		transition: transform ease 1s;
+	}
+	&__girl{
+		z-index: 2;
+		position: absolute;
+		bottom: 0;
+		opacity: 0;
+	}
+	&__swipe{
+		position: absolute;
+		bottom: -4%;
+		left: 0;
+		z-index: 1;
+		transition: 2s;
+	}
+}

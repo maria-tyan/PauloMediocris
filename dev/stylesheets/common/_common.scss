@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+$fa: "FontAwesome";
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+@mixin object-fit($fit: fill, $position: null) {
+    -o-object-fit: $fit;
+    object-fit: $fit;
+
+    @if $position {
+        -o-object-position: $position;
+        object-position: $position;
+        font-family: "object-fit: #{$fit}; object-position: #{$position}";
+    }
+    @else {
+        font-family: "object-fit: #{$fit}";
+    }
+}
+
+input,
+textarea,
+button {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    border-radius: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+$mobile: "only screen and (max-width: 750px)";
+$tablet: "only screen and (max-width: 1004px)";
+$desktop: "only screen and (max-width: 1200px)";
+$bigDesktop: "only screen and (max-width: 1500px)";
+$desktop1700: "only screen and (max-width: 1700px)";
+
+body {
+    color: $basic-blue;
+    font-family: 'Fira Sans';
+    overflow-x: hidden;
+    background: $white;
+
+    * {
+        box-sizing: border-box;
+    }
+}
+.content {
+    max-width: 100vw;
+    overflow-x:hidden;
+    background: linear-gradient(125deg, #C6D2DE 40px, #fff 576px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fira Sans';
+    line-height: 1;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+    line-height: normal;
+}
+
+h2 {
+    font-size: 46px;
+    font-weight: 900;
+    text-align: center;
+    color: $basic-blue;
+    margin-bottom: 30px;
+    line-height: normal;
+    @media (max-width:992px) {
+        font-size:38px;
+    }
+    @media (max-width:768px) {
+
+        text-align:left;
+        font-size:28px;
+    }
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 200;
+    color: $basic-blue;
+    text-align: center;
+    line-height: normal;
+    @media (max-width:992px) {
+        font-size:20px;
+    }
+    @media (max-width:768px) {
+        padding-left:3%;
+        text-align:left;
+        font-size:18px;
+    }
+}
+
+h4 {
+    font-family: "Fira Sans";
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 36px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+p {
+    font-family: 'Fira Sans';
+    font-size: 18px;
+    font-weight: 300;
+    line-height: normal;
+
+    strong {
+        font-weight: 700;
+    }
+
+    a {
+        color: $basic-blue;
+        font-weight: 700;
+    }
+}
+
+ul {
+    li {
+        position: relative;
+        font-family: 'Fira Sans';
+        font-weight: 200;
+        font-size: 18px;
+        line-height: normal;
+    }
+}
+
+ol {
+    counter-reset: myCounter;
+
+    li {
+        font-family: 'Fira Sans';
+        font-weight: 200;
+        font-size: 18px;
+        line-height: normal;
+
+        &:before {
+            counter-increment: myCounter;
+
+            $counter_list: counter(myCounter) ".";
+
+            content: $counter_list;
+            font-family: 'Fira Sans';
+            font-weight: 200;
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+}
+
+.inline_wrapper {
+    text-align: justify;
+    text-justify: newspaper;
+    zoom: 1;
+    line-height: 0;
+    font-size: 1px;
+
+    > div {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    &:after {
+        content: "";
+        display: inline-block;
+        overflow: hidden;
+        visibility: hidden;
+        width: 100%;
+        height: 0;
+    }
+}
+
+.center_img {
+    position: relative;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        transform: translate(-50%, -50%);
+    }
+}

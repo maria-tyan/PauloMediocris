@@ -1,0 +1,43 @@
+mixin header(banner)
+    -var menu = [{title: 'О компании', link: '#'}, {title: 'Автопарк', link: '#'}, {title: 'Услуги', link: 'servises.html'}, {title: 'Контакты', link: '#'}]
+    +b.HEADER
+        +b.header-top-belt
+            .container-fluid
+                .row
+                    +e.inner.col-lg-12.col-md-12
+                        .row
+                            +b.logo.col-lg-2.col-lg-offset-1.col-md-2.col-sm-4.col-xs-5
+                                +e.A.link(href = "./")
+                                    img(src="images/svg/logo-01.svg" width="206" height="74" alt="logo")
+                            +b.NAV.nav.js-nav.col-lg-5.col-md-6.col-sm-12.col-xs-12.hidden-sm.hidden-xs
+                                ul
+                                    -for (var i = 0; i < menu.length; i++)
+                                        li
+                                            a(href="#{menu[i].link}")= menu[i].title
+                                +e.hphone.visible-xs
+                                    a(href="tel:+74951202727") +7 (495) 120 27 27
+                            +b.header-contact.col-lg-4.col-md-4.col-sm-7.hidden-xs
+                                p Работаем 24 часа в сутки!
+                                +e.hphone
+                                    a(href="tel:+74951202727") +7 (495) 120 27 27
+                                +e.hemail
+                                    a(href="mailto:info@sentrom.ru") info@sentrom.ru
+                                +b.btn-style.hidden-sm.hidden-xs.js-order
+                                    +e.text Аренда автобуса? Закажите звонок!
+                            .visible-sm.visible-xs.col-sm-1.col-xs-2.col-xs-offset-5.col-sm-offset-0
+                                +b.burger.js-menu
+                                    hr
+                                    hr
+                                    hr
+        -if (banner)
+            +b.header-banner
+                .container-fluid
+                    .row
+                        +b.header-heading.col-lg-5.col-lg-offset-2.col-md-9
+                            h1 Транспортное обслуживание в Москве — заказ и аренда
+                            ul
+                                li туристические (экскурсионные) автобусы
+                                li микроавтобусы
+                            +b.btn-style.visible-sm.visible-xs.col-sm-8.col-xs-10.col-sm-offset-2.col-md-offset-0.col-xs-offset-1.js-order
+                                +e.text Аренда автобуса? Закажите звонок!
+

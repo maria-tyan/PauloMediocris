@@ -1,0 +1,12 @@
+include ../../node_modules/bemto.pug/bemto
+
+include mixins/head.pug
+include mixins/mixins.pug
+doctype html
+block variables
+html(lang='ru')
+    +head('PauloMed')
+    body
+        .content
+            block content
+        script(src="js/bundle.js")
