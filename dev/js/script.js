@@ -21,52 +21,46 @@ $(document).ready(function () {
     });
 
 
-
 });
 
 window.onload = function() {
 
+    var wh = $(window).height();
+
+
     setTimeout(function(){
-        setTimeout(function(){
-            $('.js-falls-girl').css({
-                'opacity' : '0'
-            })
-            $('.js-girl').addClass('animated').css({
-                'opacity' : '1'
-            });
-        }, 1000)
-        $('.js-falls-girl').css({
-            'transform' :'translateY(0%)'
-        });
-        
+        $('html').animate( { scrollTop: 100 }, 1100 );
     }, 5000);
     setTimeout(function(){
 
-        $('.js-girl').css({
-            'opacity' : '0'
-        });
-        $('.js-falls-girl').css({
+        $('.js-sprite').removeClass('animated').css({
             'transform':'translateY(100%)',
-            'opacity' : '1'
+            'background-image' : "url(images/falls.png)"
         });
         
         $('.js-swipe').css({'transform':'translateX(100vw)'});
+
+        $("html, body").animate({ scrollTop: wh }, 600);
+
+        setTimeout(function(){
+            
+            $('.js-sprite').css({
+                "background-image" : "url(images/is_worth21.png)"
+            });
+            setInterval(function(){
+                step();
+            }, 1000);
+        }, 1000)
     }, 15000)
-    
-//     var ww = $(window).width();
-//     var wh = $(window).height();
-//     var ph = document.getElementById("main");
-//     var paper = Raphael(0, 0, ww, wh);
+}
 
-//     var c = paper.image("images/bus.svg", ww/2, wh/2, 30, 30, .2);
-//     c.attr({opacity: 0.3});
-//     c.animate({
-//         opacity: .8,
-//         x: ww/2,
-//         y: wh/2,
-//         width: 100,
-//         height: 100
-//     }, 2000);
-
-
+function step(){
+    setTimeout(function(){
+        $('.js-sprite').css({
+            "background-image" : "url(images/hand.png)"
+        })
+    }, 500)
+    $('.js-sprite').css({
+        "background-image" : "url(images/is_worth21.png)"
+    })
 }

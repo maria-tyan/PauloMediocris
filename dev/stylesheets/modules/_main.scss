@@ -7,7 +7,16 @@
 
 .main-screen{
 	padding-top: 20vh;
+	// padding-bottom: 20vh;
+	// height: 100vh;
+	transition: transform ease 1s;
+
+}
+
+.text-banner{
 	padding-bottom: 20vh;
+	height: 100vh;
+	box-sizing: border-box;
 }
 
 @keyframes move {
@@ -50,6 +59,20 @@ h1{
 		max-width: 100%;
 		
 	}
+
+	&__sprite{
+		position: absolute;
+		width: 41.67vw;
+		height: 41.67vw !important;
+		z-index: 3;
+		// width: 600px;
+		// height: 600px;
+		bottom: 0;
+		background-image: url("../images/sitting.png");
+		transition: transform ease 1s;
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
 	&__falls-girl{
 		transform: translateY(-100%);
 		position: absolute;
@@ -69,5 +92,6 @@ h1{
 		left: 0;
 		z-index: 1;
 		transition: 2s;
+
 	}
 }

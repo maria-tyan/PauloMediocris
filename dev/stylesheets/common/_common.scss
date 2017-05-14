@@ -55,6 +55,7 @@ body {
     font-family: 'Fira Sans';
     overflow-x: hidden;
     background: $white;
+    // transition: transform ease 1s;
 
     * {
         box-sizing: border-box;
@@ -63,7 +64,8 @@ body {
 .content {
     max-width: 100vw;
     overflow-x:hidden;
-    background: linear-gradient(125deg, #C6D2DE 40px, #fff 576px);
+    // background-color: #09052d;
+    background: linear-gradient(125deg, gray 165px, #fff 876px);
 }
 
 h1, h2, h3, h4, h5, h6 {
