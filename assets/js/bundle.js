@@ -76,11 +76,11 @@ window.onload = function() {
 function step(){
     setTimeout(function(){
         $('.js-sprite').css({
-            "background-image" : "url(images/hand.png)"
+            "background-image" : "url(images/is_worth21.png)"
         })
     }, 500)
     $('.js-sprite').css({
-        "background-image" : "url(images/is_worth21.png)"
+        "background-image" : "url(images/hit1.png)"
     })
 }
 },{}],4:[function(require,module,exports){
